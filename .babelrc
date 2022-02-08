@@ -1,0 +1,8 @@
+{
+    "presets":[ //presets翻译预设
+        "@babel/preset-env" //这个是允许你使用最新的javascript
+    ],
+    "plugins":[ //plugins翻译插件
+        "@babel/plugin-transform-runtime" //这个是转换语法，比如吧es5转为es6语法
+    ]
+}

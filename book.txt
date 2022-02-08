@@ -1,0 +1,32 @@
+生产环境下对文件编译(babel配置)(babel配置是指js语法，比如es5转为es6)和对js和css压缩
+npm i babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+npm i @babel/runtime -S //-S是生产环境下提供运行环境，@babel/plugin-transform-runtime这个依赖于@babel/runtime
+
+
+
+你的使用场景是什么？
+你是否采用的是单一仓库（monorepo）模式？
+你是否需要编译 node_modules？
+那么 babel.config.json 文件可以满足你的的需求！
+
+你的配置文件是否仅适用于项目的某个部分？
+那么 .babelrc.json 文件适合你！
+
+
+
+clean-webpack-plugin 清除构建文件夹  https://github.com/johnagan/clean-webpack-plugin
+copy-webpack-plugin 复制静态资源文件  https://www.webpackjs.com/plugins/copy-webpack-plugin/
+npm i clean-webpack-plugin copy-webpack-plugin -D
+
+
+
+
+
+对js和css压缩(js和css都是提前出来单独打包的)
+optimize-css-assets-webpack-plugin //压缩css文件
+terser-webpack-plugin //压缩js文件
+mini-css-extract-plugin(在头部使用到link需要安装)
+npm i terser-webpack-plugin optimize-css-assets-webpack-plugin -D
+npm i mini-css-extract-plugin -D
+npm　run build后dist会显示多出压缩的js和css文件，和直接打开的index.html控制台的elements会显示<link rel="stylesheet" type="text/css" href="file:///C:/Users/17648/Desktop/webpack/dist/src_index_scss.css">
+ 

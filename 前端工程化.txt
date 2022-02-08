@@ -1,0 +1,58 @@
+webpack 4.x/glup项目配置，Yeoman项目脚手架
+自动化测试(工具、框架及使用)
+
+webpack前端工程化工具可以做什么，代码的转义，模块的合并，混淆代码的分割，自动刷新等等
+
+会写任务比较glup和webpack
+会写一个脚手架
+
+webpack/glup构建工具
+前端工程化是指将前端开发的流程规范化、标准化，包括开发流程、技术选型，代码规范、构建发布等，用于提升前端工程师的开发效率和代码质量
+webpack是属于构建发布，webpack做的是资源类型的压缩，管理
+开发流程指的是是需求分析法，版本控制
+代码规范是vue-cli eslint create等
+
+(看PPT)为什么要前端工程化？复杂度高/规模大/要求高（为什么要压缩，因为复杂度高  |   规模大出的问题，放到线上会垮掉）
+
+(看PPT)怎么做到前端工程化？怎么做？
+a、从业务着手
+b、从复杂度考虑         ( jenkenis,持续集成ci工具   git/gitlab版本控制工具  webpack前端构建工具  React/Vue/Angular前端框架)
+
+(看PPT的最佳实践)  git flow,团队协作和代码管理，包括分支创建，代码合并，自动化发布
+有了webpack代码层面上不需要代码的检查，代码的混淆，资源的压缩，预编译
+Jenkins+Docker配合着前端项目构建测试生成的环境或者用户测试的环境
+
+webpack核心概念：entry入口   output输出   Loader(很多loader,静态文件使用什么loader,高阶语言使用什么loader)   plugins插件(扩展能力)  模式(开发和生产模式)/兼容性
+
+webpack是js写的，转换成webpack认识的语言
+loader处理的是webpack不能处理的文件，除了js以外的文件
+插件的任务比较广泛，打包优化，压缩等
+loaders,转换某种类型的模块
+
+webpack的import()和require.ensure()需要Promise。如果你想要支持旧版本浏览器，在使用这些表达式之前，还需要提前加载polyfill。
+
+node -v
+npm -v
+nvm ls-remote   //查看远端hts的版本，显示绿色的版本号(windows没有ls-remote指令，用这个安装，在node.js上查看hts版本)
+nvm use v10.16.0   //nvm切换到这个版本,nvm是linux系统的指令
+nvm list 
+
+npm init -y
+npm install webpack webpack-cli --save-dev 或npm install webpack webpack-cli -D //--save-dev就是-D
+./node_modules/.bin/webpack --version //测试不成功 或npx webpack --version
+npm install webpack -g   // 加-g就是全局，不加就是局部
+npm run build //打包命令，package.json的scripts需要配置脚本"build":"webpack"
+
+webpack安装及使用
+a、初始化项目
+npm init -y快速创建nodejs项目
+b、nvm,node,npm环境确认
+nvm install/use v10.16.0,node -v,npm -v
+c、两种webpack安装与三种使用方式
+npm install -g/-D webpack webpack-cli
+npx webpack&./node_modules/.bin/webpack&npm run script
+
+
+
+
+
